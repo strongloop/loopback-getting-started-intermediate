@@ -12,7 +12,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "reviews": {
+      "type": "hasMany",
+      "model": "Review",
+      "foreignKey": ""
+    },
+    "reviewers": {
+      "type": "hasMany",
+      "model": "Reviewer",
+      "foreignKey": ""
+    }
+  },
   "acls": [],
   "methods": []
 }
