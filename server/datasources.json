@@ -13,12 +13,12 @@
     "connector": "mysql"
   },
   "mongoDs": {
-    "name": "mongoDs",
-    "connector": "mongodb",
     "host": "demo.strongloop.com",
     "port": 27017,
     "database": "getting_started_intermediate",
     "username": "demo",
-    "password": "L00pBack"
+    "password": "L00pBack",
+    "name": "mongoDs",
+    "connector": "mongodb"
   }
 }
