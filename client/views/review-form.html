@@ -1,0 +1,34 @@
+<section>
+  <form name="form" ng-submit="submitForm()">
+    <fieldset>
+      <legend>{{action}} review form</legend>
+
+      <div class="form-group">
+        <label>Coffee shop name</label>
+        <select
+            ng-disabled="isDisabled"
+            ng-model="selectedShop"
+            ng-options="shop as shop.name for shop in coffeeShops"></select>
+      </div>
+
+      <div class="form-group">
+        <label>Rating</label>
+        <input type="radio" ng-model="review.rating" value="1">1&#9733;
+        <input type="radio" ng-model="review.rating" value="2">2&#9733;
+        <input type="radio" ng-model="review.rating" value="3">3&#9733;
+        <input type="radio" ng-model="review.rating" value="4">4&#9733;
+        <input type="radio" ng-model="review.rating" value="5">5&#9733;
+      </div>
+
+      <div class="form-group">
+        <label>Comments</label>
+        <textarea ng-model="review.comments"></textarea>
+      </div>
+
+      <div class="actions">
+        <label></label>
+        <button>{{action}} review</button>
+      </div>
+    </fieldset>
+  </form>
+<section>
