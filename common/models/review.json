@@ -1,0 +1,22 @@
+{
+  "name": "Review",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "rating": {
+      "type": "number"
+    },
+    "comments": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

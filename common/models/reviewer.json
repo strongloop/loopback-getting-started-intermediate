@@ -1,0 +1,10 @@
+{
+  "name": "Reviewer",
+  "base": "User",
+  "idInjection": true,
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
