@@ -3,8 +3,8 @@
 Please see LoopBack [Getting started part II](http://docs.strongloop.com/display/LB/Getting+started+part+II) for the tutorial that walks you through creating this application.
 
 ```
-git clone git@github.com:strongloop/loopback-getting-started-intermediate.git
-cd loopback-getting-started-intermediate
-npm install
-slc run
+$ git clone git@github.com:strongloop/loopback-getting-started-intermediate.git
+$ cd loopback-getting-started-intermediate
+$ npm install
+$ node .
 ```
