@@ -3,8 +3,8 @@ angular
     'ui.router',
     'lbServices'
   ])
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
-      $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider,
+                                                             $urlRouterProvider) {
     $stateProvider
       .state('add-review', {
         url: '/add-review',
@@ -58,12 +58,19 @@ angular
       });
     $urlRouterProvider.otherwise('all-reviews');
   }])
-  .run(['$rootScope', '$state', function($rootScope, $state) {
-    $rootScope.$on('$stateChangeStart', function(event, next) {
+
+  .run(['$rootScope', '$state', function ($rootScope, $state) {
+
+    var user = JSON.parse(localStorage.getItem('currentUser'));
+
+    $rootScope.currentUser = user || null;
+
+    $rootScope.$on('$stateChangeStart', function (event, next) {
       // redirect to login page if not logged in
       if (next.authenticate && !$rootScope.currentUser) {
         event.preventDefault(); //prevent current page from loading
         $state.go('forbidden');
       }
     });
-  }]);
+  }])
+;
