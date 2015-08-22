@@ -1,7 +1,6 @@
 angular
   .module('app')
-  .factory('AuthService', ['Reviewer', '$q', '$rootScope', function(User, $q,
-      $rootScope) {
+  .factory('AuthService', ['Reviewer', '$q', '$rootScope', function(User, $q, $rootScope) {
     function login(email, password) {
       return User
         .login({email: email, password: password})
@@ -12,6 +11,7 @@ angular
             tokenId: response.id,
             email: email
           };
+          localStorage.setItem('currentUser', JSON.stringify($rootScope.currentUser));
         });
     }
 
@@ -21,6 +21,7 @@ angular
        .$promise
        .then(function() {
          $rootScope.currentUser = null;
+         localStorage.clear();
        });
     }
 
