@@ -8,12 +8,13 @@ module.exports = function(app) {
   // create all models
   async.parallel({
     reviewers: async.apply(createReviewers),
-    coffeeShops: async.apply(createCoffeeShops),
+    coffeeShops: async.apply(createCoffeeShops)
   }, function(err, results) {
     if (err) throw err;
 
     createReviews(results.reviewers, results.coffeeShops, function(err) {
-      console.log('> models created sucessfully');
+      if (err) throw err;
+      console.log('> models created successfully');
     });
   });
 
@@ -38,7 +39,7 @@ module.exports = function(app) {
       app.models.CoffeeShop.create([
         {name: 'Bel Cafe', city: 'Vancouver'},
         {name: 'Three Bees Coffee House', city: 'San Mateo'},
-        {name: 'Caffe Artigiano', city: 'Vancouver'},
+        {name: 'Caffe Artigiano', city: 'Vancouver'}
       ], cb);
     });
   }
@@ -56,28 +57,28 @@ module.exports = function(app) {
           rating: 5,
           comments: 'A very good coffee shop.',
           publisherId: reviewers[0].id,
-          coffeeShopId: coffeeShops[0].id,
+          coffeeShopId: coffeeShops[0].id
         },
         {
           date: Date.now() - (DAY_IN_MILLISECONDS * 3),
           rating: 5,
           comments: 'Quite pleasant.',
           publisherId: reviewers[1].id,
-          coffeeShopId: coffeeShops[0].id,
+          coffeeShopId: coffeeShops[0].id
         },
         {
           date: Date.now() - (DAY_IN_MILLISECONDS * 2),
           rating: 4,
           comments: 'It was ok.',
           publisherId: reviewers[1].id,
-          coffeeShopId: coffeeShops[1].id,
+          coffeeShopId: coffeeShops[1].id
         },
         {
           date: Date.now() - (DAY_IN_MILLISECONDS),
           rating: 4,
           comments: 'I go here everyday.',
           publisherId: reviewers[2].id,
-          coffeeShopId: coffeeShops[2].id,
+          coffeeShopId: coffeeShops[2].id
         }
       ], cb);
     });
