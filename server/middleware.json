@@ -14,10 +14,13 @@
   "routes": {
     "loopback#status": {
       "paths": "/status"
+    },
+    "loopback#rest": {
+      "paths": ["${restApiRoot}"]
     }
   },
   "files": {
-    "loopback#static": {
+    "serve-static": {
       "params": "$!../client"
     }
   },
@@ -25,6 +28,6 @@
     "loopback#urlNotFound": {}
   },
   "final:after": {
-    "errorhandler": {}
+    "loopback#errorHandler": {}
   }
 }
