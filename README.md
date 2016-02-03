@@ -8,3 +8,7 @@ $ cd loopback-getting-started-intermediate
 $ npm install
 $ node .
 ```
+
+---
+
+[More LoopBack examples](https://github.com/strongloop/loopback-example)
