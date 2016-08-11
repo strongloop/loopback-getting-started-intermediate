@@ -5,8 +5,8 @@
 
 angular
   .module('app')
-  .factory('AuthService', ['Reviewer', '$q', '$rootScope', function(User, $q,
-      $rootScope) {
+  .factory('AuthService', ['Reviewer', '$q', '$rootScope', '$state', function(
+      User, $q, $rootScope, $state) {
     function login(email, password) {
       return User
         .login({email: email, password: password})
@@ -38,9 +38,20 @@ angular
        .$promise;
     }
 
+    function refresh(accessTokenId) {
+      return User
+        .getCurrent(function(userResource) {
+          $rootScope.currentUser = {
+            id: userResource.id,
+            tokenId: accessTokenId,
+            email: userResource.email
+          };
+        });
+    }
     return {
       login: login,
       logout: logout,
-      register: register
+      register: register,
+      refresh: refresh
     };
   }]);
