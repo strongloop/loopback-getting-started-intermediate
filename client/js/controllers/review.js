@@ -90,17 +90,24 @@ angular
         });
     };
   }])
-  .controller('MyReviewsController', ['$scope', 'Review', '$rootScope',
-      function($scope, Review, $rootScope) {
-    $scope.reviews = Review.find({
-      filter: {
-        where: {
-          publisherId: $rootScope.currentUser.id
-        },
-        include: [
-          'coffeeShop',
-          'reviewer'
-        ]
-      }
-    });
+  .controller('MyReviewsController', ['$scope', 'Review',
+      function($scope, Review) {
+        // after a refresh, the currenUser is not immediately on the scope
+        // So, we're watching it on the scope and load my reviews only then.
+        $scope.$watch('currentUser.id', function(value) {
+          if (!value) {
+            return;
+          }
+          $scope.reviews = Review.find({
+            filter: {
+              where: {
+                publisherId: $scope.currentUser.id
+              },
+              include: [
+                'coffeeShop',
+                'reviewer'
+              ]
+            }
+          });
+        });
   }]);
