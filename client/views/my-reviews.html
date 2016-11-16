@@ -1,0 +1,15 @@
+<section>
+  <article ng-repeat="r in reviews.slice().reverse()">
+    <header>
+      <h1>{{r.date | date}} | {{r.coffeeShop.name}}</h1>
+      <h2>{{r.reviewer.email}}</h2>
+    </header>
+
+    <p>{{r.rating}}&#9733; - {{r.comments}}</p>
+
+    <div class="actions" ng-show="currentUser">
+      <button ui-sref="edit-review({ id: r.id })">Edit</button>
+      <button a ui-sref="delete-review({ id: r.id })">Delete</button>
+    </div>
+  </article>
+</section>
