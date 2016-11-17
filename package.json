@@ -6,6 +6,9 @@
     "pretest": "jshint .",
     "test": "mocha"
   },
+  "bugs": {
+    "url": "https://github.com/strongloop/loopback-getting-started-intermediate/issues"
+  },
   "dependencies": {
     "async": "^0.9.0",
     "compression": "^1.0.3",
