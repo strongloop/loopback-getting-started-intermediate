@@ -22,13 +22,13 @@ module.exports = function(app) {
       var Reviewer = app.models.Reviewer;
       Reviewer.create([{
         email: 'foo@bar.com',
-        password: 'foobar'
+        password: 'foobar',
       }, {
         email: 'john@doe.com',
-        password: 'johndoe'
+        password: 'johndoe',
       }, {
         email: 'jane@doe.com',
-        password: 'janedoe'
+        password: 'janedoe',
       }], cb);
     });
   }
@@ -39,14 +39,14 @@ module.exports = function(app) {
       var CoffeeShop = app.models.CoffeeShop;
       CoffeeShop.create([{
         name: 'Bel Cafe',
-        city: 'Vancouver'
+        city: 'Vancouver',
       }, {
         name: 'Three Bees Coffee House',
-        city: 'San Mateo'
+        city: 'San Mateo',
       }, {
         name: 'Caffe Artigiano',
-        city: 'Vancouver'
-      }, ], cb);
+        city: 'Vancouver',
+      }], cb);
     });
   }
   //create reviews
