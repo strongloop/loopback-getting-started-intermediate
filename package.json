@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "posttest": "npm run lint && nsp check"
+    "posttest": "npm run lint"
   },
   "dependencies": {
     "async": "^2.1.2",
