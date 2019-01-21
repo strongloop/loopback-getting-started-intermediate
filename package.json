@@ -1,6 +1,9 @@
 {
   "name": "loopback-getting-started-intermediate",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=6"
+  },
   "main": "server/server.js",
   "scripts": {
     "lint": "eslint .",
