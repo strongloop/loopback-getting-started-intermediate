@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2015,2016. All Rights Reserved.
+// Node module: loopback-getting-started-intermediate
+
 // CommonJS package manager support
 if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
   module.exports === exports) {

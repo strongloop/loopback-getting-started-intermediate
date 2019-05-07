@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2014,2016. All Rights Reserved.
+// Node module: loopback-getting-started-intermediate
+
 'use strict';
 
 var async = require('async');

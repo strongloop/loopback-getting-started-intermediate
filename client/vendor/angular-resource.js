@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2015,2016. All Rights Reserved.
+// Node module: loopback-getting-started-intermediate
+
 /**
  * @license AngularJS v1.3.2
  * (c) 2010-2014 Google, Inc. http://angularjs.org
