@@ -1,3 +1,6 @@
+// Copyright IBM Corp. 2015,2016. All Rights Reserved.
+// Node module: loopback-getting-started-intermediate
+
 /**
  * State-based routing for AngularJS
  * @version v0.2.11
